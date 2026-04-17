@@ -1,0 +1,231 @@
+/****************/
+/* CUSTOM FONTS */
+/****************/
+
+@font-face {
+    font-family: Handwritten;
+    src: url(fonts/KTRM-HW-1.4.ttf);
+}
+
+@font-face {
+    font-family: UI;
+    src: url(fonts/KTRM-PT-1.2.ttf);
+}
+
+/********/
+/* MAIN */
+/********/
+
+@keyframes bganim {
+    0% {
+        background-color: rgba(180, 15, 15, 0.8);
+    }
+    33% {
+        background-color: rgba(15, 180, 15, 0.8);
+    }
+    67% {
+        background-color: rgba(15, 15, 180, 0.8);
+    }
+    100% {
+        background-color: rgba(180, 15, 15, 0.8);
+    }
+}
+
+* {
+    text-shadow: 0 0 5px rgba(96, 96, 96, 0.75);
+}
+
+body {
+    text-align: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "UI", sans-serif;
+}
+
+/***********/
+/* BUTTONS */
+/***********/
+
+.buttons {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    font-family: "UI", sans-serif;
+    padding: 6px;
+}
+
+#pushbutton {
+    font-size: 24px;
+    width: 180px;
+    margin: 32px;
+}
+
+#pagebutton,
+#pageprevbutton {
+    font-size: 18px;
+    width: 48px;
+    margin: 8px;
+}
+
+#addbutton,
+#removebutton {
+    font-size: 18px;
+    margin: 8px;
+}
+
+.buttons:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    transition: 300ms;
+}
+
+.buttons:active {
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: 300ms;
+    box-shadow: 0 0 24px 0 rgba(255, 255, 255, 0.8);
+}
+
+.buttons:disabled {
+    background-color: rgba(255, 255, 255, 0.35);
+    transition: 300ms;
+    color: rgba(255, 255, 255, 0.35);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+/********************/
+/* STRING LISTER UI */
+/********************/
+
+.textboxes {
+    background: none;
+    border-style: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+    font-family: 'UI';
+    color: rgba(255, 255, 255, 0.8);
+    width: 120px;
+}
+
+.listboxes {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 400px;
+    height: 600px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#summary {
+    padding-bottom: 270px;
+}
+
+/********************/
+/* SETTINGS & ABOUT */
+/********************/
+
+@keyframes popupwindow {
+    0% {
+        opacity: 0%;
+        top: 130px;
+    }
+    100% {
+        opacity: 100%;
+        top: 100px;
+    }
+}
+
+.window {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    animation: bganim 20s infinite, popupwindow 500ms;
+}
+
+/**************/
+/* 3D SPINNER */
+/**************/
+
+@keyframes spinpopup {
+    0% {
+        bottom: -600px;
+    }
+    100% {
+        bottom: -278px;
+    }
+}
+
+@keyframes spindisapp {
+    0% {
+        bottom: -278px;
+    }
+    100% {
+        bottom: -600px;
+    }
+}
+
+.spinnerdisp {
+    font-size: 36px;
+    font-family: "Handwritten", cursive;
+    transform: translate(0, 110%);
+}
+
+#spinnerbox {
+    height: 300px;
+    width: 300px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.075));
+    perspective: 440px;
+    position: fixed;
+    left: 50%;
+    bottom: -278px;
+    transform: translate(-50%, -50%);
+    animation: spinpopup 300ms;
+  }
+
+#spinner1,
+#spinner2,
+#spinner3,
+#spinner4 {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.075));
+    transform-style: preserve-3d;
+}
+  
+@keyframes spin {
+    0% {
+        transform: rotateX(1980deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+  
+@keyframes spin2 {
+    0% {
+        transform: rotateX(2025deg);
+    }
+    100% {
+        transform: rotateX(45deg);
+    }
+}
+  
+@keyframes spin3 {
+    0% {
+        transform: rotateX(2070deg);
+    }
+    100% {
+        transform: rotateX(90deg);
+    }
+}
+  
+@keyframes spin4 {
+    0% {
+        transform: rotateX(2120deg);
+    }
+    100% {
+        transform: rotateX(135deg);
+    }
+}

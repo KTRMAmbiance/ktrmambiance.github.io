@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D String Picker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1000px, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="app.webmanifest" type="application/manifest+json">
+</head>
+<audio id="spinsound">
+    <source src="sounds/spinner.ogg" type="audio/ogg">
+</audio>
+<style>
+@import "style.css"
+</style>
+<script src="main.js" charset="UTF-8">
+</script>
+<body id="back">
+
+<div style="width: 500px; margin-left: auto; margin-right: auto;">
+    <div style="position: fixed; min-width: 500px;">
+        <button class="buttons" id="pushbutton" type="button" onclick="displaySettings();">Settings</a>
+        <button class="buttons" id="pushbutton" type="button" onclick="displayAbout();">About</a>
+    </div>
+    
+
+<div style="height: 800px;">
+<div>
+            </br></br></br></br></br><div>Enter a string of choice here: </div>
+            </br><input type="text" class="textboxes" id="texttoadd">
+            <button class="buttons" id="addbutton" type="button" onclick="addString()">Add</button>
+            </br>
+<button class="buttons" id="pushbutton" type="button" onclick="pickString(selectedstring, listofstrings)">Select</button>
+
+<div></br></div>
+
+<div id="lister">
+
+
+<div></br></div>
+<div>Search: <input type="text" class="textboxes" id="listfilter"><button class="buttons" id="addbutton" type="button" onclick="listStringsOnClick()">List</button></div>
+<div><input type="checkbox" id="alphasort"</div><label for="alphasort">Sort alphabetically</label>
+<div><input type="checkbox" id="listfilterc"</div><label for="listfilterc">Case-sensitive search</label>
+<div><input type="checkbox" id="removedups"</div><label for="removedups">Omit duplicates</label>
+<div>Remove: <input type="text" class="textboxes" id="removefromlist"><button class="buttons" id="removebutton" type="button" onclick="removeString()">Remove</button></div>
+<div></br></div>
+
+<div class="listboxes" id="listbox1"></div>
+
+<table border="0" style="margin-left: auto; margin-right: auto;">
+    <tr>
+        <td><button class="buttons" id="pageprevbutton" type="button" onclick="prevPage()" disabled="true">←</button></td>
+        <td><div id="pagenum">Page 1 of 1</div><div id="ranges" style="width: 250px;">(0 to 0)</div></td>
+        <td><button class="buttons" id="pagebutton" type="button" onclick="nextPage()" disabled="true">→</button></td>
+    </tr>
+</table>
+<div id="summary"></div>
+</div>
+</div>
+
+<div id="spinnerbox" style="display: none;">
+    <div id="spinner1">
+    <div style="width: 300px; height: 150px;"><div class="spinnerdisp" id="spinnerdisp1"></div></div>
+    <div style="transform: rotateX(180deg)"><div style="width: 300px; height: 190px;"><div class="spinnerdisp" id="spinnerdisp5"></div></div></div>
+    </div>
+    <div id="spinner2">
+    <div style="width: 300px; height: 150px;"><div class="spinnerdisp" id="spinnerdisp2"></div></div>
+    <div style="transform: rotateX(180deg)"><div style="width: 300px; height: 190px;"><div class="spinnerdisp" id="spinnerdisp6"></div></div></div>
+    </div>
+    <div id="spinner3">
+    <div style="width: 300px; height: 150px;"><div class="spinnerdisp" id="spinnerdisp3"></div></div>
+    <div style="transform: rotateX(180deg)"><div style="width: 300px; height: 190px;"><div class="spinnerdisp" id="spinnerdisp7"></div></div></div>
+    </div>
+    <div id="spinner4">
+    <div style="width: 300px; height: 150px;"><div class="spinnerdisp" id="spinnerdisp4"></div></div>
+    <div style="transform: rotateX(180deg)"><div style="width: 300px; height: 190px;"><div class="spinnerdisp" id="spinnerdisp8"></div></div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="windowlayer" style="min-width: 500px;">
+    <div class="window" id="settingswindow" style="position: fixed; width: 500px; height: 500px; top: 100px; bottom: 200px; display: none;">
+        <div class="titlebar" style="cursor: move;">
+            <button class="buttons" id="titlebutton" style="background: none; border: none; color: rgba(255, 255, 255, 0.8); position: absolute; font-size: 25px; left: 40px; top: 30px;" type="button"; onclick="closeSettings()">╳</button>
+            <div style="border-bottom: 2px solid rgba(255, 255, 255, 0.8); margin: 15px;"><h1>Settings</h1></div>
+        </div>
+        <div id="windowcontent" style="text-align: left; margin: 40px; margin-top: 0;">
+        <input type="checkbox" id="soundswitch">
+        <label for="soundswitch">Play spinner sound</label>
+        </br></br><input type="checkbox" id="removeselected">
+        <label for="removeselected">Remove selected</label>
+        </br></br><input type="checkbox" id="customincl">
+        <label for="customincl">Filter selections</label>
+        </br>Selection should include: <input type="text" class="textboxes" id="includedtext">
+        </br><input type="checkbox" id="custominclsns">
+        <label for="custominclsns">Case-sensitive</label>
+        </div>
+    </div>
+    <div class="window" id="aboutwindow" style="position: absolute; width: 800px; height: 200px; top: 100px; bottom: 200px; margin-left: -150px; display: none;">
+        <div class="titlebar">
+            <button class="buttons" id="titlebutton" style="background: none; border: none; color: rgba(255, 255, 255, 0.8); position: absolute; font-size: 25px; left: 40px; top: 30px;" type="button"; onclick="closeAbout()">╳</button>
+            <div style="border-bottom: 2px solid rgba(255, 255, 255, 0.8); margin: 15px;"><h1>About this webapp</h1></div>
+        </div>
+        <div id="windowcontent" style="text-align: left; margin: 40px; margin-top: 0;">
+            <div>A random string picker using a 3D spinner made with HTML5 & CSS3 & JavaScript.</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html> 

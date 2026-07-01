@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>(ALPHA) Radio Player</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1000px, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="app.webmanifest" type="application/manifest+json">
+</head>
+<style>
+@import "style.css"
+</style>
+<script src="main.js" charset="UTF-8">
+</script>
+<script src="stations.js" charset="UTF-8">
+</script>
+<body id="back">
+
+<div class="window" style="height: 700px; margin: auto; display: flex;">
+    <div id="leftside">
+        <div id="leftcontainer">
+            <div style="height: 550px;">
+                <div id="coverart" style="width: 200px; height: 200px; margin: auto; border: 2px solid rgba(255, 255, 255, 0.8); background-image: url("https:\/\/shoutcast.radyogrup.com:1020\/playingart\?sid=1");"></div>
+                <h2 id="songtitle"></h2>
+                <h3 id="artistname"></h3>
+                <h4 id="statdisplayname" style="opacity: 50%"></h4>
+            </div>
+            <div style="height: 150px;">
+                <canvas id="equalizer">Your browser does not support the HTML5 canvas tag.</canvas>
+            </div>
+        </div>
+    </div>
+    <div id="rightside" style="width: 600px; margin-left: 30px; margin-right: 30px;">
+        <div style="height: 550px;">
+            <h1>Stations list</h1>
+            <div style="border-top: 2px solid rgba(255, 255, 255, 0.8);">
+                </br>
+                <div class="stationItem" id="stationItem1">
+                    <div><button class="buttons" id="playbutton1" onclick="playRadioStation(1)">></button></div>
+                    <div><div id="statName1">Station name</div><div id="playing1" style="display: none;">(Playing)</div></div>
+                </div>
+                <div class="stationItem" id="stationItem2">
+                    <div><button class="buttons" id="playbutton2" onclick="playRadioStation(2)">></button></div>
+                    <div><div id="statName2">Station name</div><div id="playing2" style="display: none;">(Playing)</div></div>
+                </div>
+                <div class="stationItem" id="stationItem3">
+                    <div><button class="buttons" id="playbutton3" onclick="playRadioStation(3)">></button></div>
+                    <div><div id="statName3">Station name</div><div id="playing3" style="display: none;">(Playing)</div></div>
+                </div>
+                <div class="stationItem" id="stationItem4">
+                    <div><button class="buttons" id="playbutton4" onclick="playRadioStation(4)">></button></div>
+                    <div><div id="statName4">Station name</div><div id="playing4" style="display: none;">(Playing)</div></div>
+                </div>
+                <div class="stationItem" id="stationItem5">
+                    <div><button class="buttons" id="playbutton5" onclick="playRadioStation(5)">></button></div>
+                    <div><div id="statName5">Station name</div><div id="playing5" style="display: none;">(Playing)</div></div>
+                </div>
+        </div>
+    </div>
+    
+        <div style="height: 150px; border-top: 2px solid rgba(255, 255, 255, 0.8); text-align: left;">
+            </br>
+            <audio id="rplayer" crossorigin="anonymous" controls style="width: 100%; display: none;">
+                <source id="mainplayer" type="application/x-mpegURL">
+                Your browser does not support the audio element.
+            </audio>
+            <div style="display: flex;"><div><button class="buttons" id="playpause" onclick="playRadioStation(currentstation)">>/||</button></div>
+                <div style="margin-top: auto; margin-bottom: auto;">
+                    <div style="width: 120px; display: inline;">
+                        <button class="draggable" id="volumebtn" style="position: relative; left: 100px; width: 20px; height: 20px;"></button>    
+                        <div id="volumebg" style="background: rgba(255, 255, 255, 0.3); width: 100px; height: 2px; position: relative; bottom: 14px;"><div id="volumefill" style="background: rgba(255, 255, 255, 0.5); width: 100px; height: 2px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html> 

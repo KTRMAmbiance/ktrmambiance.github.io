@@ -1,0 +1,30 @@
+{
+    "jstations":
+    [
+        {
+            "statname":"1",
+            "statsource":"http://shoutcast.radyogrup.com:1020/;",
+            "stattitle":"http://shoutcast.radyogrup.com:1020/currentsong?sid=1"
+        },
+        {
+            "statname":"2",
+            "statsource":"https://live.radyofenomen.com/fenomen/abr/playlist.m3u8",
+            "stattitle":""
+        },
+        {
+            "statname":"3",
+            "statsource":"http://live.kunelradio.ru:8000/128.mp3",
+            "stattitle":""
+        },
+        {
+            "statname":"4",
+            "statsource":"https://av.bimradio.ru/kurai_mp3",
+            "stattitle":""
+        },
+        {
+            "statname":"5",
+            "statsource":"https://kathy.torontocast.com:3060/;",
+            "stattitle":"https://kathy.torontocast.com:3060/currentsong?sid=1"
+        }
+    ]
+}

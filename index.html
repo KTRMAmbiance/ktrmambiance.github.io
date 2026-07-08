@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1000px, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="app.webmanifest" type="application/manifest+json">
+</head>
+<style>
+@import "style.css"
+</style>
+<script src="main.js" charset="UTF-8">
+</script>
+<body id="back">
+    
+<div style="width: 500px; margin-left: auto; margin-right: auto;">
+    <div style="position: fixed; min-width: 500px;">
+        <button class="titlemenusub" id="projs" onclick="displayProjects()">Projects</button>
+    </div>
+</div>
+
+<div id="mainpage" style="padding-top: 96px;">
+    <li class="posttitle" style="font-size: 36px;">Main page</li>
+    <li class="postcontainer" style="font-size: 18px;">Content coming soon</li>
+</div>
+
+<div id="windowlayer" style="width: 900px; height: 500px; margin: auto;">
+    <div class="window" id="projectwindow" style="position: fixed; width: 900px; height: 500px; top: 100px; bottom: 200px; display: none;">
+        <div class="titlebar">
+            <button class="titlebutton" type="button"; onclick="closeProjects()">╳</button>
+            <div style="border-bottom: 2px solid rgba(255, 255, 255, 0.8); margin: 15px;"><h1>Projects list</h1></div>
+        </div>
+        <div id="windowcontent" style="text-align: left; margin: 40px; margin-top: 0;">
+            <div class="projectItem" id="projectItem1" style="display: flex";>
+                <div style="width: 48px; height: 48px; margin: 16px; background-image: url('3DStringPicker/icons/icon64.png'); background-size: 100% 100%;"></div>
+                <div><div id="projName1" style="font-size: 22px;"><a href="3DStringPicker/main.html">3D String Picker</a></div><div id="projDesc1">A random picker featuring a 3D spinner</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html> 

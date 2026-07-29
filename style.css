@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: Handwritten;
-    src: url(_fonts/KTRM-HW-1.4.ttf);
+    src: url(https://raw.githubusercontent.com/KTRMAmbiance/ktrmambiance.github.io/refs/heads/main/_fonts/KTRM-HW-1.4.ttf);
 }
 
 @font-face {
     font-family: UI;
-    src: url(_fonts/KTRM-PT-1.2.ttf);
+    src: url(https://raw.githubusercontent.com/KTRMAmbiance/ktrmambiance.github.io/refs/heads/main/_fonts/KTRM-PT-1.2.ttf);
 }
 
 /********/
